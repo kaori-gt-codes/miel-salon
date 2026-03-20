@@ -1,0 +1,39 @@
+// ============================================================
+// _mixin.scss — 再利用可能なmixin定義
+// ============================================================
+
+@use 'variables' as v;
+
+// --- レスポンシブ用 mixin ---
+// 使い方: @include mq(sp) { ... }
+@mixin mq($bp) {
+  @if $bp == tablet {
+    @media (max-width: #{v.$bp-tablet}) {
+      @content;
+    }
+  } @else if $bp == sp {
+    @media (max-width: #{v.$bp-sp}) {
+      @content;
+    }
+  }
+}
+
+// --- Flexbox センタリング ---
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// --- テキスト省略（1行） ---
+@mixin text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// --- アスペクト比ボックス ---
+@mixin aspect-ratio($w, $h) {
+  aspect-ratio: #{$w} / #{$h};
+  overflow: hidden;
+}

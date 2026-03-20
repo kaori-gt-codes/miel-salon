@@ -1,0 +1,38 @@
+// ============================================================
+// _section-title.scss
+// ============================================================
+
+@use '../../foundation/variables' as v;
+@use '../../foundation/mixin' as m;
+
+.c-section-title {
+  margin-bottom: 64px;
+
+  &--center {
+    text-align: center;
+  }
+
+  &__en {
+    display: block;
+    font-family: v.$font-en-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: v.$color-muted;
+    margin-bottom: 14px;
+  }
+
+  &__ja {
+    font-family: v.$font-ja-serif;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+    color: v.$color-dark;
+
+    @include m.mq(sp) {
+      font-size: 22px;
+    }
+  }
+}

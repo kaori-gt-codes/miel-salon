@@ -1,0 +1,49 @@
+// ============================================================
+// _reserve.scss
+// ============================================================
+
+@use '../../foundation/variables' as v;
+@use '../../foundation/mixin' as m;
+
+.p-reserve {
+  padding: v.$section-padding 0;
+  background-color: v.$color-dark;
+
+  &__inner {
+    text-align: center;
+  }
+
+  &__sub {
+    font-family: v.$font-en-serif;
+    font-size: 12px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(250, 250, 248, 0.5);
+    margin-bottom: 22px;
+  }
+
+  &__title {
+    font-family: v.$font-ja-serif;
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: v.$color-bg;
+    margin-bottom: 24px;
+    line-height: 1.5;
+
+    @include m.mq(sp) {
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    font-size: 15px;
+    line-height: 2.1;
+    color: rgba(250, 250, 248, 0.7);
+    margin-bottom: 52px;
+
+    @include m.mq(sp) {
+      font-size: 14px;
+    }
+  }
+}

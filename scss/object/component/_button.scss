@@ -1,0 +1,49 @@
+// ============================================================
+// _button.scss
+// ============================================================
+
+@use '../../foundation/variables' as v;
+
+.c-btn {
+  display: inline-block;
+  padding: 15px 38px;
+  border: 1px solid v.$color-dark;
+  font-family: v.$font-en-sans;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  white-space: nowrap;
+
+  // --- modifier: 塗りつぶし（ダーク） ---
+  &--primary {
+    background-color: v.$color-dark;
+    color: v.$color-bg;
+    border-color: v.$color-dark;
+
+    &:hover {
+      background-color: transparent;
+      color: v.$color-dark;
+    }
+  }
+
+  // --- modifier: アウトライン（ライト） ---
+  &--light {
+    background-color: transparent;
+    color: v.$color-bg;
+    border-color: v.$color-bg;
+
+    &:hover {
+      background-color: v.$color-bg;
+      color: v.$color-dark;
+    }
+  }
+
+  // --- modifier: 大きいサイズ ---
+  &--lg {
+    padding: 20px 52px;
+    font-size: 13px;
+  }
+}

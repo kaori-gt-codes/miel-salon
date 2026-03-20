@@ -1,0 +1,63 @@
+// ============================================================
+// _footer.scss
+// ============================================================
+
+@use '../foundation/variables' as v;
+@use '../foundation/mixin' as m;
+
+.l-footer {
+  background-color: v.$color-dark;
+  color: v.$color-bg;
+  padding: 64px v.$container-pad;
+
+  &__inner {
+    max-width: v.$container-max;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+  }
+
+  &__logo {
+    font-family: v.$font-en-serif;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+  }
+
+  &__nav {
+    ul {
+      display: flex;
+      gap: 36px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    a {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(250, 250, 248, 0.55);
+      transition: color 0.25s ease;
+
+      &:hover {
+        color: v.$color-bg;
+      }
+    }
+  }
+
+  &__copy {
+    font-size: 11px;
+    color: rgba(250, 250, 248, 0.35);
+    letter-spacing: 0.06em;
+  }
+
+  @include m.mq(sp) {
+    padding: 52px 20px;
+
+    &__nav ul {
+      gap: 24px;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+// ============================================================
+// _variables.scss — デザイントークン定義
+// ============================================================
+
+// --- Colors ---
+$color-bg:        #FAFAF8;
+$color-bg-sub:    #F4F3F1;
+$color-accent:    #D9CFC4;
+$color-dark:      #2C2422;
+$color-text-sub:  #5C4D49;
+$color-muted:     #9B8B7F;
+
+// --- Typography ---
+$font-en-serif:   'Cormorant Garamond', Georgia, serif;
+$font-ja-serif:   'Noto Serif JP', Georgia, serif;
+$font-en-sans:    'DM Sans', sans-serif;
+$font-ja-sans:    'Noto Sans JP', sans-serif;
+
+// --- Layout ---
+$header-height:   72px;
+$section-padding: 120px;
+$container-max:   1200px;
+$container-pad:   40px;
+
+// --- Breakpoints ---
+$bp-tablet: 1199px;
+$bp-sp:      767px;
+
+// --- Easing ---
+$ease-standard: cubic-bezier(0.4, 0, 0.2, 1);

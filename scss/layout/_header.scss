@@ -1,0 +1,146 @@
+// ============================================================
+// _header.scss
+// ============================================================
+
+@use '../foundation/variables' as v;
+@use '../foundation/mixin' as m;
+
+.l-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 0 v.$container-pad;
+  height: v.$header-height;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+
+  &.is-scrolled {
+    background-color: v.$color-bg;
+    box-shadow: 0 2px 24px rgba(44, 36, 34, 0.08);
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: v.$container-max;
+    margin: 0 auto;
+    height: 100%;
+  }
+
+  &__logo {
+    font-family: v.$font-en-serif;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: v.$color-dark;
+    flex-shrink: 0;
+  }
+
+  &__nav-list {
+    display: flex;
+    gap: 44px;
+
+    a {
+      font-family: v.$font-en-sans;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: v.$color-dark;
+      position: relative;
+      transition: color 0.25s ease;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: v.$color-dark;
+        transition: width 0.3s ease;
+      }
+
+      &:hover {
+        color: v.$color-muted;
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__cta {
+    font-size: 11px;
+    padding: 11px 28px;
+    letter-spacing: 0.18em;
+  }
+
+  &__hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 101;
+
+    span {
+      display: block;
+      width: 26px;
+      height: 1px;
+      background-color: v.$color-dark;
+      transition: transform 0.35s ease, opacity 0.35s ease;
+      transform-origin: center;
+    }
+
+    &.is-open {
+      span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+      span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    }
+  }
+
+  @include m.mq(sp) {
+    padding: 0 20px;
+
+    &__nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background-color: v.$color-bg;
+      z-index: 99;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &.is-open {
+        display: flex;
+      }
+    }
+
+    &__nav-list {
+      flex-direction: column;
+      align-items: center;
+      gap: 36px;
+
+      a {
+        font-size: 14px;
+        letter-spacing: 0.2em;
+      }
+    }
+
+    &__cta {
+      display: none;
+    }
+
+    &__hamburger {
+      display: flex;
+    }
+  }
+}

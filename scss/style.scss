@@ -1,0 +1,35 @@
+// ============================================================
+// style.scss — エントリーポイント（FLOCSS構成）
+//
+// 読み込み順序が重要です。
+// Foundation → Layout → Object (Component → Project → Utility)
+// ============================================================
+
+// --- Foundation ---
+@use 'foundation/variables';
+@use 'foundation/reset';
+@use 'foundation/base';
+// ※ _mixin.scss は各ファイル内で個別に @use します
+
+// --- Layout ---
+@use 'layout/header';
+@use 'layout/footer';
+
+// --- Object / Component ---
+@use 'object/component/button';
+@use 'object/component/card';
+@use 'object/component/section-title';
+
+// --- Object / Project ---
+@use 'object/project/hero';
+@use 'object/project/concept';
+@use 'object/project/menu';
+@use 'object/project/stylist';
+@use 'object/project/access';
+@use 'object/project/reserve';
+
+// --- Object / Utility ---
+@use 'object/utility/text';
+
+// --- Animation (scroll) ---
+// ※ コンパイル後のCSSはstyle.cssに直接記載

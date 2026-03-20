@@ -1,0 +1,68 @@
+// ============================================================
+// _concept.scss
+// ============================================================
+
+@use '../../foundation/variables' as v;
+@use '../../foundation/mixin' as m;
+
+.p-concept {
+  padding: v.$section-padding 0;
+  background-color: v.$color-bg;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+
+    @include m.mq(tablet) {
+      gap: 48px;
+    }
+
+    @include m.mq(sp) {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  &__image {
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 580px;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+
+      @include m.mq(tablet) {
+        height: 480px;
+      }
+
+      @include m.mq(sp) {
+        height: 56vw;
+        min-height: 240px;
+      }
+    }
+
+    &:hover img {
+      transform: scale(1.04);
+    }
+  }
+
+  &__content {
+    .c-section-title {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__text {
+    font-size: 15px;
+    line-height: 2.1;
+    color: v.$color-text-sub;
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+// ============================================================
+// _base.scss — 基本スタイル（body, テキストなど）
+// ============================================================
+
+@use 'variables' as v;
+
+body {
+  font-family: v.$font-en-sans, v.$font-ja-sans;
+  font-weight: 400;
+  color: v.$color-dark;
+  background-color: v.$color-bg;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
